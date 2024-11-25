@@ -101,7 +101,7 @@ const App = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="">
       {step === 'form' && <QuizForm onStart={startQuiz} />}
       {step === 'question' && currentQuestion && <QuizQuestion question={currentQuestion} onAnswer={handleAnswer} />}
       {step === 'results' && results && <QuizResults results={results} onRestart={restartQuiz} />}
