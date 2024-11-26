@@ -1,5 +1,5 @@
-import React, {  } from 'react';
-import YouTube from 'react-youtube';
+import React from 'react';
+import YouTube, { YouTubeEvent } from 'react-youtube';
 
 interface QuizQuestionProps {
   question: {
@@ -11,7 +11,7 @@ interface QuizQuestionProps {
 }
 
 const QuizQuestion: React.FC<QuizQuestionProps> = ({ question, onAnswer }) => {
-  const onPlayerReady = (event: any) => {
+  const onPlayerReady = (event: YouTubeEvent) => {
     event.target.playVideo();
   };
 
@@ -25,7 +25,7 @@ const QuizQuestion: React.FC<QuizQuestionProps> = ({ question, onAnswer }) => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-50 to-green-50 p-4 sm:p-8">
-      <YouTube videoId="8YGlzSl6cxU" opts={opts} onReady={onPlayerReady} />
+      <YouTube videoId="dQw4w9WgXcQ" opts={opts} onReady={onPlayerReady} />
       <div className="bg-white shadow-xl rounded-xl p-6 sm:p-8 w-full max-w-md">
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
           {question.questionText}
